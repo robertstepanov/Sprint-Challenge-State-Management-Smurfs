@@ -4,14 +4,14 @@ import axios from "axios";
 export const SmurfContext = createContext();
 
 export const SmurfProvider = props => {
-  const [smurf, setSmurf] = useState([{}]);
+  const [smurf, setSmurf] = useState([]);
 
   useEffect(() => {
     axios
       .get("http://localhost:3333/smurfs")
       .then(res => {
-        setSmurf(res.data);
-        console.log(res.data);
+        setSmurf(res.smurfs);
+        console.log(res.smurfs);
       })
       .catch(err => console.log(err));
   }, []);

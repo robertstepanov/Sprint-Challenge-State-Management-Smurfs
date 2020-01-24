@@ -5,8 +5,8 @@ import SmurfContext from "../contexts/SmurfContext";
 import Smurf from "./Smurf";
 
 const Smurfs = props => {
-  const { smurfs, addSmurf } = useContext(SmurfContext);
-
+  const { smurf, addSmurf } = useContext(SmurfContext);
+  
   return (
     <div>
       {smurfs.map(smurf => (
