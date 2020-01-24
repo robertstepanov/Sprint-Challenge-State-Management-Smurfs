@@ -1,19 +1,23 @@
 import React, { useContext } from "react";
 
-import SmurfContext from "../contexts/SmurfContext";
+import SmurfContext from "../contexts/SmurfContext.js";
 
 import Smurf from "./Smurf";
 
 const Smurfs = props => {
   const { smurf, addSmurf } = useContext(SmurfContext);
-  
+
   return (
     <div>
-      {smurfs.map(smurf => (
-        <Smurf smurf={smurf} addSmurf={addSmurf} />
+      {smurf.map(newSmurf => (
+        <Smurf
+          key={newSmurf.id}
+          newSmurf={newSmurf}
+          addSmurf={addSmurf}
+        />
       ))}
     </div>
   );
 };
 
-export default Products;
+export default Smurfs;
